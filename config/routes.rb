@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   root :to => 'categories#index'
 
-  resources :categories, except: :index do
-    resources :posts
-  end
+  get 'categories/:id/posts' => 'posts#index', :as => "posts"
+
+  resources :posts, except: :index
+
+  # resources :categories, except: :index do
+  #   resources :posts
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

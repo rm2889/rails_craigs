@@ -13,5 +13,6 @@ describe CategoriesController do
 			get :index
 			expect(assigns(:categories)).to eq categories
 		end
+
 	end
 end

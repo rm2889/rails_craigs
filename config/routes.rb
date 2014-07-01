@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root :to => 'categories#index'
 
   get 'categories/:id/posts' => 'posts#index', :as => "posts"
+  get 'categories/:id/posts/new' => "posts#new", :as => "new_post"
 
-  resources :posts, except: :index
+  resources :posts, except: [:index, :new]
+
 
   # resources :categories, except: :index do
   #   resources :posts
